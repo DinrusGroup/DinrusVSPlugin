@@ -1,0 +1,223 @@
+This is the TODO file for visuald, a 
+Visual Studio package providing both project management and language services
+
+Copyright (c) 2011 by Rainer Schuetze, All Rights Reserved
+
+This file lists issues that I'm aware of and hope to resolve in the near future,
+but no guarantees.
+
+Settings:
+---------------
+- different global settings for D1/D2?
+- browse-buttons for path input lines
+
+Project:
+---------------
+- clean/build/rebuild only project not working
+- midl compiler?
+- manifest compiler?
++ no dependencies to files referenced by import expressions
+- remove auto-tool?
+- automation objects incomplete?
+- exceptions when opening rc-file with project
+- adding new item to project causes lots of System.Resources.MissingManifestResourceException
+  which seems like a frozen UI (only first dialog open)
+- incremental builds?
+- DnD files/folders loses project file settings
+- retreive both filename and name in the solution, and make them accessible through variables
+- different icon for project items after changing tool
+- what happens without d file on the command line?
+- template to create a Visual D project from an existing source tree
+- breaking into build does not stop dmd
+- environment variables with parenthesis don't work $(ProgramFiles(x86))
+- GDC: 
+  - separate compile + link does not write to object dir
+  - ddoc files
++ additional options for resource compiler
+- pass import path from static lib project to dependent projects
+
+- single file compilation for file configuration
+- custom command: quotes in dependencies not supported
+- custom command: writes build batch to project folder
+- custom command: no output given => creates ".build.cmd"
+- single file commands: track dependencies, also outputs
+- single file commands: multiple outputs
+
+- VS2013: property pages don't follow resize
+- VS2013: possible to copy a project item with DnD into the same project again
+- saving file while it is being compiled/linked does not force a recompilation
+
+
+Language service:
+-----------------
++ goto definition does not know about scope
+- use spell-checker on completion?
+- case insensitive completion?
+- showScope: function/delegate literal not shown correctly, in/out/body
+- disable parsing/outlining for large files?
+- replace token: empty dialog when opened without resizing
+- check indentation of multiple string literals on several lines
+- show help in standard browser
+- VS sometimes does not remember position inside file across restart?
+- goto import jumps to "mod" if run on "import mod = pkg.mod;"
+- support DDoc comment in JSON file
+- goto definition might jump to wrong file if identically named files in solution
+- file source navigation menus
+- spurious display of completion box
+
+Lexer/Parser:
+---------------
+- fix Cmp/ShiftExpression
+- octal numbers
+- do not parse file if it is D1?
+- deprecated syntax
+- syntax error with "@disable new()"
+- 0.ident
+
+Semantics:
+---------------
+- semantic support for => delegates
+- import paths for source files not in any project
+- invalidate after changes
+- templates
+- operator overloads
+- UFCS
+- completion at the beginning of an identifier lists its members
+- package/module specifier before symbol
+- vdserver.exe should remove semantic project if devenv.exe terminates
+- vdserver.exe should terminate if devenv.exe crashes
+- expansion fails too often
+- handle parser error at caret better for expansion/definition
+- ddmd: semantic engine fails when module names do not match the path?
+
+Search:
+---------------
+- icons depending on type
+- resort columns
+- button state not shown correctly after switching search type
+- crashes when searching C# project?
+- update result list after build
+- update too slow when typing filter
+- VS2012: focus not in edit line after opening dialog
+- ddmd: finding files in .. does not work?
+
+Object Browser:
+---------------
+- Show full information/hierarchy in base classes
+- Derived types
+- inherited members
+- enum base classes
+- modules without module statement shown with empty name
+- restrict "My Solution" to classes in projects in solution
+- list projects in "Custom Components"
+- split constraint from name
+- description: hyperlinks to other symbols
+
+Profile:
+---------------
+- splitter for fan in/out windows
+- switch window layout to fan in/out side by side
+
+C++ to D
+---------
+- documentation
+- parse operators
+- edit fields sometimes do not support Ctrl-C/V
+
+Installation:
+---------------
+- build sdk-imports
+- add dmd-installation via ftp
+
+Debugger:
+---------------
+Any/dmd:
+- stepping through function call jumps to default assignment
+- bad line info for scope(exit), for increment expression, constants
+- arguments to local functions treated as locals
+- local functions/delegates should have debug info for closure vars ("this" exists)
+- extern(D) function arguments shown in the wrong order
+- support GDC+mago
++ bugzilla 14286: x64: no type information for dAssocArray
+- bugzilla 4014: no debug info from libraries
+
+
+Mago:
+- ddmd: show derived class
+- step after exception
+- exceptions on x64
++ set instruction pointer
++ modules window does not show 64-bit addresses
+- symbols in disassembly
+  + absolute code/data adresses
+  - symbols relative to ebp/rbp
+  + symbols relative to RIP
+  + show labels for disasm address
+  - allow symbolic address input
++ no symbols for publics without debug info
+- improve stepping through C
++ load symbols from Microsoft Symbol Server, respect symbol settings
++ stack: arguments show locals aswell
+- identically named locals show the same value
++ dstring shows as uint[] without string representation
+- string/wstring shown as char/wchar[], but with correct string representation
++ AA indexing
++ AA preview/expand
+- new AA implementation
+- Array preview
+- delegate value/type
+- struct preview
++ verboser output when loading/unloading DLLs
+- attach to process
+- hardware breakpoints
++ does not work with variable scope
+- ddmd: ignore keywords in (C++) expressions
+
+VS:
+- VS2012: autoexp.dat does not work? depends on debug engine => edit and continue
+- "old" debug engine crashes with COFF32
+
+- GDC: x64: function arguments not shown
+
+GUI-Designer:
+-------------
+- Form designer: see IVSMDDesignerService
+
+
+Unsorted
+=========
++ parse all files in project at startup
+- COM leaks in VS2012 (VS2010?)
+- virustotal reports malicious software
+- reset semantic analysis data
+- goto definition/completion for labels, versions
++ goto definition fallback to JSON
+- highlight compiler-magic identifiers
+
++ compile from selection/buffer (through rdmd)
++ save file before "Compile & run"
++ coverage line highlight after "Compile & run" doesn't update
++ better keeping track of line changes
+
++ compile & debug
++ margin for profiler
+
++ formatting does not work with .editorConfig
++ do not report build failure when run returns non-zero result
+
+- compile and run : set VCInstallDir for -m64
++ mago keeps image locked when terminating debugger
+- -gc/-g depending on debug engine
+- dub support
++ dustmite support
+- dfix support
+- configuration of dependent project not read from configuration manager
++ jump to assertion error
++ import std.container: jump to package
++ renaming configuration does not change project config
++ win32coff support
++ file search: replace . with \ in path search?
++ run cv2pdb disabled for GDC/x64
+
+- hide Visual D menu if inactive
+- follow theme colors for tool windows

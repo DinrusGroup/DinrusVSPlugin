@@ -1,0 +1,154 @@
+// This file is part of Visual D
+//
+// Visual D integrates the D programming language into Visual Studio
+// Copyright (c) 2010 by Rainer Schuetze, All Rights Reserved
+//
+// Distributed under the Boost Software License, Version 1.0.
+// See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt
+
+/////////////////////////////////////////////////////////////////////////////
+// Resources for Visual D
+//
+
+#if 1
+#define LANG_ENGLISH       0x09
+#define SUBLANG_ENGLISH_US 0x01
+#else
+#include "winresrc.h"
+#endif
+
+#include "resources/resources.h"
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    // I've chosen to keep the PLK as part of the source, disredarding the unclear statements
+    // from Microsoft, whether it must not be made public. It is very easily extracted from
+    // the binary anyway, and it is fixed to the given names.
+    // 
+    // Please do not abuse!!!
+    //
+    // PLK generated for
+    // Company Name	Rainer Schuetze
+    // Package Name	Visual D
+    // Package GUID	{002a2de9-8bb6-484d-987f-7e4ad4084715}
+    // PLK Version	0.3
+    // Min. Visual Studio Version	Visual Studio 2002
+    // Minimum Product Edition	Standard
+    IDS_PACKAGE_LOAD_KEY "QEJRPTQ2HHH3E0M0QAAPCZQJPDJCACQKMQKCDCAJQ1IIIKJQH9I2M0QIC8CJE0JIJKIDECD0H9Q0KAHJQRA0QAMZZIIQMPA9J2JMIAD1I9Q9REIMI2MCMPPJJHPIKEKZ"
+
+    IDS_PRODUCT        "Visual D"
+    IDS_PRODUCTDETAILS "Integration of the D Programming Language into Visual Studio"
+
+    IDS_VDSETTINGS     "Visual D Settings"
+END
+
+ICON_ABOUTBOX ICON "resources\DAboutLogo.ico"
+
+IDI_ASCENDING               ICON    "resources/ascend.ico"
+IDI_DESCENDING              ICON    "resources/descend.ico"
+IDR_COMBINECOLUMNS          ICON    "resources/CombineColumns.ico"
+IDR_ALTERNATEROWCOLOR       ICON    "resources/AlternateRowColor.ico"
+IDR_GROUPBYKIND             ICON    "resources/GroupByType.ico"
+IDR_CLOSEONRETURN           ICON    "resources/CloseOnReturn.ico"
+IDR_WHOLEWORD               ICON    "resources/WholeWord.ico"
+IDR_CASESENSITIVE           ICON    "resources/CaseSensitive.ico"
+IDR_REGEXP                  ICON    "resources/RegExp.ico"
+IDR_SEARCHFILE              ICON    "resources/SearchFile.ico"
+IDR_SEARCHSYMBOL            ICON    "resources/SearchSymbol.ico"
+IDR_FANINOUT                ICON    "resources/faninout.ico"
+IDR_REMOVETRACE             ICON    "resources/removetrace.ico"
+IDR_SETTRACE                ICON    "resources/settrace.ico"
+IDR_REFRESH                 ICON    "resources/refresh.ico"
+IDR_FULLDECO                ICON    "resources/fulldeco.ico"
+
+BMP_DIMAGELIST  BITMAP "resources/dimagelist.bmp"
+BMP_SPLASHSCRN  BITMAP "resources/dsplashscreenicon.bmp"
+//BMP_VSIMAGELIST BITMAP "resources/vsimagelist.bmp"
+BMP_COMPLETION  BITMAP "resources/completionset.bmp"
+
+2001  CTMENU       "Resources/PkgCmd.cto"
+
+/////////////////////////////////////////////////////////////////////////////
+
+#define __str(x) #x
+#define _str(x) __str(x)
+
+#include "../version"
+
+#if VERSION_BUILD > 0
+#define VERSION_POSTFIX         _str(VERSION_BETA) _str(VERSION_BUILD)
+#else
+#define VERSION_POSTFIX
+#endif
+
+#define VER_COMPANYNAME_STR     "Rainer Schuetze"
+#define VER_FILEVERSION         VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION
+#define VER_FILEVERSION_STR     _str(VERSION_MAJOR.VERSION_MINOR.VERSION_REVISION) VERSION_POSTFIX
+#define VER_PRODUCTVERSION      VER_FILEVERSION
+#define VER_PRODUCTVERSION_STR  VER_FILEVERSION_STR
+#define VER_LEGALCOPYRIGHT_STR  "(c) 2010-2012 Rainer Schuetze"
+
+#define VER_FILEDESCRIPTION_STR  "Visual D Package\0"
+#define VER_PRODUCTNAME_STR      "Visual D\0"
+#define VER_INTERNALNAME_STR     "visuald.dll\0"
+#define VER_ORIGINALFILENAME_STR "visuald.dll\0"
+#define VER_LANGUAGENEUTRAL
+
+#define VER_FILEFLAGSMASK 0x3fL
+#define VER_FILEFLAGS     0x8L
+#define VER_FILEOS        0x40004L
+#define VER_FILETYPE      0x2L // VS_DLL
+#define VER_FILESUBTYPE   0x0L // unknown
+
+#define VER_BLOCKHEADER   "040904b0"
+#define VER_TRANSLATION   0x409
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+#define VS_VERSION_INFO         1
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    VER_FILEVERSION
+PRODUCTVERSION VER_PRODUCTVERSION
+FILEFLAGSMASK  VER_FILEFLAGSMASK
+FILEFLAGS      VER_FILEFLAGS
+FILEOS         VER_FILEOS
+FILETYPE       VER_FILETYPE
+FILESUBTYPE    VER_FILESUBTYPE
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK VER_BLOCKHEADER
+        BEGIN
+            VALUE "CompanyName",     VER_COMPANYNAME_STR
+            VALUE "FileDescription", VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",     VER_FILEVERSION_STR
+            VALUE "InternalName",    VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",  VER_LEGALCOPYRIGHT_STR
+            VALUE "OriginalFilename",VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",     VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",  VER_PRODUCTVERSION_STR
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", VER_TRANSLATION, 0x04B0
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////

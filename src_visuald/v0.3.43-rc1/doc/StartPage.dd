@@ -1,0 +1,83 @@
+Ddoc
+
+$(TABLE_NOBORDER
+$(TD $(IMG images/vd_logo.png))
+$(TD
+$(P Visual D is a Visual Studio package providing both project management and language services. 
+It works with Visual Studio 2005 - 2015 including Visual Studio Community 2013/2015 as well as the free Visual Studio Shells. 
+See the $(LINK2 Installation.html, Installation) instructions, especially if not using a commercial edition of Visual Studio.)
+
+$(P Visual D aims at providing seamless integration of the D programming language into Visual Studio.)
+
+<div align="right">
+$(LINK2 https://github.com/D-Programming-Language/visuald/releases/download/v$(VERSION)/VisualD-v$(VERSION).exe, $(IMG images/download.png))
+$(P $(LINK2 https://github.com/D-Programming-Language/visuald/releases, Beta releases))
+</div>
+))
+
+
+$(H2 Overview)
+
+$(P Use the navigation bar on the left to take a tour of Visual D including a lot of screen shots.)
+
+$(TABLE_NOBORDER
+$(TD 
+$(UL
+ $(LI Project management with all DMD options available through the UI)
+ $(LI Syntax highlighting with special version and token string support)
+ $(LI Import statement completion, semantic word-completion)
+ $(LI Underlining of syntactical errors)
+ $(LI Goto definition)
+ $(LI Parameter info tooltips)
+ $(LI Code outlining)
+ $(LI Symbol/File search window)
+ $(LI Integration of $(LINK2 https://github.com/rainers/cv2pdb, cv2pdb) and 
+      $(LINK2 http://dsource.org/projects/mago_debugger, Mago) for nice debugging experience)
+ $(LI Profiler browse window)
+ $(LI Code Coverage support)
+ $(LI Support for Error List, Code Definition window, Object Browser and Class View)
+ $(LI C++ to D Conversion Wizard)
+ $(LI Code completion and tooltips from semantic analysis of source code)
+ $(LI Support for building with $(LINK2 https://bitbucket.org/goshawk/gdc/wiki/Home, GDC) 
+      instead of DMD (including 64-bit code))
+ $(LI Completely written in D)
+)
+) $(TD 
+$(LINK2 images/fullvs.png, <img src="images/fullvs.png" width="100%"/>)
+))
+
+$(LINK2 Features.html, Read more...)
+
+$(H2 News)
+
+$(P $(LINK2 VersionHistory.html, Full version history and complete details...)
+)
+
+2015-8-5 Version 0.3.42
+$(UL
+ $(LI new command "DustMite Build Failure" to reduce source for build error with $(LINK2 DustMite.html,DustMite))
+ $(LI integration into the Visual Studio Performance Wizard)
+ $(LI cv2pdb: improved DWARF support, intergration with Visual Studio 2015)
+ $(LI demangling D/C++ symbols in disassembly)
+)
+
+2015-5-16 Version 0.3.41
+$(UL
+ $(LI new linker option "build and use local phobos library")
+ $(LI dparser updated to with support for new language features in dmd 2.067)
+ $(LI mago debugger improvements)
+ $(LI new command "$(LINK2 CompileCommands.html,Compile and Disassemble)" to show the disassembly of the current file in
+    the code context window)
+)
+
+$(LINK2 VersionHistory.html, more...)
+
+$(H2 Download)
+
+$(P The latest installer and older versions can be downloaded 
+$(LINK2 https://github.com/D-Programming-Language/visuald/releases, here).
+You can find even older versions and some additional files in 
+the $(LINK2 http://www.dsource.org/projects/visuald/browser/downloads/, dsource download directory).)
+
+Macros:
+	TITLE=Visual D

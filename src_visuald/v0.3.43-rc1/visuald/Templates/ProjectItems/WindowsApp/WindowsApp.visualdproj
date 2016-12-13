@@ -1,0 +1,14 @@
+<DProject>
+  <ProjectGuid>$guid1$</ProjectGuid>
+  <Config name="Debug">
+    <subsystem>2</subsystem>
+    <libfiles>ole32.lib kernel32.lib user32.lib comctl32.lib comdlg32.lib</libfiles>
+  </Config>
+  <Config name="Release">
+    <subsystem>2</subsystem>
+    <libfiles>ole32.lib kernel32.lib user32.lib comctl32.lib comdlg32.lib</libfiles>
+  </Config>
+  <Folder name="$safeprojectname$">
+    <File path="winmain.d"></File>
+  </Folder>
+</DProject>

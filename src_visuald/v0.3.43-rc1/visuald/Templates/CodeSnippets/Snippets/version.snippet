@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>version</Title>
+			<Shortcut>version</Shortcut>
+			<Description>Code snippet for version statement</Description>
+			<Author>Rainer Schuetze</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>identifier</ID>
+					<ToolTip>Identifier or level</ToolTip>
+					<Default>none</Default>
+				</Literal>
+			</Declarations><Code Language="D">
+<![CDATA[version($identifier$)
+{
+    $selected$$end$
+}
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

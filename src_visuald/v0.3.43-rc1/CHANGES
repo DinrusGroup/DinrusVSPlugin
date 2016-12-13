@@ -1,0 +1,801 @@
+
+This is the CHANGES file for visuald, a 
+Visual Studio package providing both project management and language services
+
+Copyright (c) 2010-2013 by Rainer Schuetze, All Rights Reserved
+
+Version history
+---------------
+
+2010-04-13 Version 0.3.1
+
+  * initial release
+
+2010-04-14 Version 0.3.2
+
+  * added switch "use other compiler" to project settings
+  * disabled settings if respective enable switch is off
+  
+2010-04-18 Version 0.3.3
+
+  * now shows full version in about box
+  * added README, LICENSE and CHANGES to installer
+  * added DnD inside project
+  * fixed registration of D templates for "New File"
+  * fixed multi-hreading issue, e.g. causing find in entire solution to fail
+  * added "Clean" project
+  * cleaned up and added more project templates 
+
+2010-04-20 Version 0.3.4
+
+  * added support for command Edit.InvokeSnippetFromShortcut
+  * installer now requests admin execution level, so it does not fail on Vista or 
+    Windows7
+  * removed VS Express version from installer
+
+2010-04-22 Version 0.3.5
+
+  * added cv2pdb to installer
+  * support for operations on multiselection in solution explorer
+  * added option "D 2.043" to pass corresponding flag to cv2pdb
+  * macros in all debug options are now expanded
+  * fixed crashes on COM objects that were garbage-collected while still in use
+
+2010-04-26 Version 0.3.6
+
+  * fixed COM and memory leaks
+  * projects with a lot of files now build with response files
+  * when only removing file or changing folder name, project was not saved
+  * support for operation "Rebuild"
+  * option "other compiler" and map file were not quoted when containing spaces
+  * added build logging to $(IntDir)\buildlog.html
+  * added macros SAFEPROJECTPATH/DIR/FILENAME/EXT/NAME identical to PROJECT*, but
+    without spaces
+
+2010-04-27 Version 0.3.7
+
+  * force CR/LF pairs in batch commands instead of LF only end-of-line.
+
+2010-05-08 Version 0.3.8
+
+  * added function parameter tooltips
+  * fix: resource files would not be updated when used with tool "Auto"
+  * fix: custom built files always added to linker command line
+  * fix: fixed initialization exception when no windows-SDK installed
+  * fix: build only worked as admin on x64
+  * fix: spurious crashes on x64
+  * improved WindowsApp project template (added libs, sets application subsystem)
+
+2010-05-28 Version 0.3.9
+
+  * new file/symbol search window
+  * word-completion can now be expanded to symbol lookup by pressing Ctrl-Space again
+  * installation now reenables package, in case you told VS to skip loading it
+  * now using machine-translated SDK instead of std.windows
+  * fixed COM leak
+  * fix: file opened through "goto definition"/"find in files" sometimes warns
+    "already opened in editor"
+  * fix: "goto error" sometimes would not jump to error with message 
+    "cannot find the file specified"
+  * fix: last version would not let you select any but the first entry of an
+    expansion list
+  * symbol information now updated after project load, it's no longer necessary
+    to build once
+
+2010-06-03 Version 0.3.10
+
+  * updated to cv2pdb 0.13 which allows debugging under plain VS2010 and is
+    more stable when evaluating arrays in the debugger
+  * now built with debug symbols to allow crash analysis. See
+    [downloads/visuald_pdb.zip] for symbols for the latest version
+  * fix: project property dialog did not popup with saved D version
+  * added the possibility to stop a build
+  * new logo now used in about box
+
+2010-06-10 Version 0.3.11
+
+  * error messages now forwarded to error list
+  * Visual D settings now stored in the user area of the registry
+  * added library search path to project settings (you need to append ";%LIB%" to
+    the LIB setting in DMD's sc.ini for this to work)
+  * command VisualD.ShowScope now displays the scope of the caret in the 
+    status line
+  * Visual D now creates its own menu, expecting to be filled with more commands
+    in the future and to avoid cluttering other menus
+  * Search window commands are now called VisualD.SearchFile and VisualD.SearchSymbol
+    (you might need to reassign keyboard shortcuts)
+  * Thanks to Alix Pexton, the web site has a professional looking new logo. 
+
+2010-06-25 Version 0.3.12
+
+  * stricter string handling to avoid crashes when launching debugger in VS2010
+  * the windows application template's substem version now defaults to 4.0
+  * added new project item template for package creating both folder in project and 
+    directory on disk
+  * if a directory exists with the name of the folder, the default location
+    of a new project item now defaults to this directory
+  * renaming a file in the project renames it on disk aswell
+  * improved build process, it should now be possible to compile Visual D following
+    the instruction on http://www.dsource.org/projects/visuald/wiki/Build_from_source
+  * updated to cv2pdb 0.14.
+
+2010-07-09 Version 0.3.13
+
+  * renaming a file in the project did not ensure the project to be saved
+  * dragging a directory into the project now creates a folder and adds all files and
+    folders found in that directory but those that start with "."
+  * added project option "Enable informational warnings" (dmd option -wi)
+  * resource files now have command "View Code"
+  * fix: completion did not detect beginning of word at line end
+  * fix: skipping through a string literal with ctrl-left/right skipped the whole string
+  * now handling some optional project properties to keep AnkhSvn happy.
+  * SCC status of project items is now shown (but not updated yet)
+  * minor tweak of the ConsoleApp template
+  * more files translated from the Windows SDK
+  * now using label "reportError" instead of "xit" in build batches
+  * options with multiple arguments are now delimited by both ';' and white spaces, use
+    quotes if any of these need to be part of a file name
+
+2010-07-23 Version 0.3.14
+
+  * fixed parameter tooltips on VS2010
+  * fixed debugger data tooltips on VS2010
+  * fixed handling of quoted file/path names
+  * updated bitmaps in aboutbox and templates to the website logo
+  * added command VisualD.ParameterInfo to avoid hook by Visual Assist
+  * fixed import completion for packages accessed through project import path settings
+  * goto definition now displays error in status line if no definition found or opening source file fails
+  * now jumping to definition if multiple definitions exist on the same line
+  * brace highlighting now shows error in status line for mismatched brackets
+  * brace highlighting now also shows begin/end of block comments
+  * fixed pasting html text not omitting format information
+  * now using environment variable DMD_LIB to pass library path to DMD, please update DMDs sc.ini accordingly
+  * now build checks whether output files are actually created to avoid silent link failure
+  * generating JSON output is now the default setting for new projects
+
+2010-08-11 Version 0.3.15
+
+  * when reading import paths from sc.ini, the directory is determined by searching dmd.exe 
+    through the executable paths setting and the PATH environment variable
+  * fixed freeze when searching indentation level for smart indent (might also affect brace
+    matching)
+  * now packaged with cv2pdb 0.16.
+  * fixed crash when running along-side the Qt-Addin for Visual Studio
+
+2010-09-24 Version 0.3.16
+
+  * now Visual D itself also compiles against VSI SDK for Visual Studio 2010 and Windows SDK v7.1
+  * empty dependency file now causes rebuild
+  * new command "Build phobos browse info"
+  * added support for Mago debugger
+  * fixed dmd option for profiling
+  * fixed bad status message for matching parenthesis
+  * now supports command comment/uncomment selected lines
+  * improved smart indentation
+  * block re-indentation now works as a single command with respect to undo/redo
+  * now packaged with cv2pdb 0.17
+  * fixed loading DLLs (including Visual D) on Windows Server 2003
+  * now installer includes Mago debugger
+  * new profiler window to display trace.log
+  * fixed bad variable replacement when building project name shorter than 4 characters
+
+2010-09-29 Version 0.3.17
+
+  * improved support for mercurial-scc, AnkhSVN and VisualHG
+  * (un)comment/format selection did not work with selection created from bottom to top
+  * (un)comment selection now works similer to C++ always adding/removing comments, toggle
+    comments is now a new Visual D command
+  * fixed DLL loading on xp64
+  * command "Build phobos browse info" now uses $(APPDATA)\VisualD\json as the default path
+    to avoid access rights problems
+  * command "Build phobos browse info" now also works for D1
+
+2010-10-22 Version 0.3.18
+
+  * linker errors with file name on the same line did not make it into the error list
+  * added color "Visual D Operator" to "Fonts and Colors" setup
+  * added version/debug colorizations (colors "Visual D Disabled ...")
+  * added q{} token string colorizations (colors "Visual D Token String ...")
+  * additional tools settings page under TextEditor->D->Colorizer
+  * fixed broken search file dialog introduced in last version
+  * project configuration: added single file compilation option
+  * project configuration: changed defaults for "file to clean" and "json path"
+    to better support single file compilation
+  * fixed incomplete parsing of escaped file names in dependency files
+  * improved dependency file parsing speed
+  * bugfix: imports with selective import symbols could miss from dependent import files
+  * now packaged with cv2pdb 0.18
+  * now packaged with new mago version, including better exception handling and 
+    disassembly support
+  * fixed mago deinstallation, added mago to Visual Studio About Window
+  * added token identifier enumerator to lexer
+
+2010-12-11 Version 0.3.19
+
+  * fixed [] being a single token confusing brace matching
+  * fixed some issues with detecting floating point numbers
+  * fixed issues with bad colorization state
+  * fixed crash when a project in a solution could no longer be found
+  * now packaged with cv2pdb 0.19
+
+2010-12-29 Version 0.3.20
+
+  * basic outlining support (disable with check box on global text editor page
+    if it is causing trouble, manually activate it with "Outlining -> Collapse to Definitions")
+  * added build time output (set check box on global project option page)
+  * fixed missing newline after post build command
+  * fix: suffix L was not recognized on floats
+  * code completion and goto definition now also work in comments or strings
+  * ddoc files in project now also passed to DMD automatically
+  * support for generating modules.ddoc for CanDyDOC
+
+2011-01-29 Version 0.3.21
+
+  * fix: identifiers extracted for GotoDefinition stopped at digits
+  * fix: clean removed ddoc files from the doc directory, but not html files
+  * added macro expansion to modules.ddoc setting
+  * added context menu to show paste ring buffer and insert from it
+  * brace highlighting now done in idle handling, so it also works when moving
+    the caret with the mouse
+  * brace matching now also includes strings and nested comments
+  * goto matching brace now implemented (the VS implementation does not work 
+    well with D)
+  * completion: items are no longer displayed multiple times
+  * improved handling of unicode characters in environment and batch files
+  * installer now adds a "D Exception" to the "Win32 Exception" list to allow
+    the debugger to stop when a D exception is thrown
+
+2011-02-27 Version 0.3.22
+
+  * Visual D now builds with DMD 2.052
+  * fixed WindowsApp template to build with DMD 2.052
+  * fixed some COM leaks
+  * paste ring menu no longer stops when repeating the first entry and 
+    avoids duplicate entries
+  * new token search and replace dialog
+  * new compilation mode: compile and link in separate steps allowing multiple object files
+  * the option "Statement completion -> Parameter information" is now respected,
+    showing the parameter tooltip when writing the opening parenthesis
+  * smart-indent now respects the contents of the new line when inserting a line break
+  * now supporting the Code Definition Window
+
+2011-03-09 Version 0.3.23
+
+  * fixed issue on x64 with threads without TLS that crept back in by migrating to DMD 2.052
+  * separate compile and link: removed -X,-D,-H from the link step to avoid creating empty files
+  * new compilation mode: compile only to set your link step manually in the post-build step
+  * jumping to errors in files that exist in several projects now jump to the correct source
+
+2011-05-08 Version 0.3.24
+
+  * fixed crash when installing/uninstalling other Visual Studio plugins
+  * added menu entry "Open Website" to browse the visual D Website inside Visual Studio
+  * added support for Object Browser and Class View
+  * now runs a parser in the background to underline syntax errors
+  * fixed scanning of floating point literals starting with '.'
+  * default colors for identifiers, numbers and operators now follow the "Plain Text" setting
+  * new version 0.1.2 of mago that fixes some issues with exceptions and improves
+    the call stack display
+  * if a source file is used in multiple project, it is no longer opened multiple times in 
+    the editor
+  * improved lookup speed in browse info, now removing duplicate entries for eponymous templates
+  * fixed issues with quoted arguments with trailing backslash in settings
+  * browse info now updated when JSON paths changed in global options
+  * fixed spurious crash when removing multiple lines 
+  * now installs cv2pdb 0.21
+
+2011-06-19 Version 0.3.25
+
+  * fixed version information of the DLL
+  * error list: warnings are no longer shown as errors
+  * project name added to buildlog.html to allow multiple projects with the same intermediate dir
+  * fixed highlighting of version(unittest) and debug without identifier
+  * friendlier error message if debug executable or working dir do not exist
+  * reduced parsing thread priority to interfere less with editing
+  * adjusted vsi2d to build with the latest VS2010 SDK
+  * Visual D now builds with DMD 2.053
+  * moved from std.date to std.datetime to fix some time displays
+  * moved outlining into parse thread to reduce delays when editing large files
+  * added warning to library search path settings
+  * d-files now set to UTF8 encoding if not already marked by BOM
+  * fixed transparent window frame around dialogs in VS2010
+  * added drag'n'drop of project folders
+  * added support for "Stop Outlining" and "Toggle All Outlining"
+  * tweaked outlining for multi-dimensional arrays and token strings
+  * build order of custom/resource compilations now sorted by dependencies
+  * project items now sorted alphabetically
+  * fixed a few more issues with relative paths causing a source file to be opened twice in the editor
+
+2011-08-25 Version 0.3.26
+
+  * fixed regression in last version: single file compilation did not build any d files
+  * single file compilation: avoid relinking every time
+  * seperate compile and link: no longer trashes dependencies in link step
+  * goto definition, search symbol: now line number adjusted according to changes since last successful build
+  * fix: resource files in sub folders would not build because the same folders were expected in the intermediate directory
+  * global settings: split page into directories/settings pages to make option "Show build time" accessible
+  * global settings: added option to disable sorting projects
+  * parser now accepts "do {} while(cond)" without trailing ';'
+  * project options macro $(PROJECTNAME) now uses the name in the solution instead of the project file name
+  * fixed bad indentation of first contract
+  * fixed colorization of first token after debug condition without arguments
+  * "is" now always colored as operator, not as keyword
+  * updated to build with dmd 2.055beta
+
+2011-09-24 Version 0.3.27
+
+  * smart reindenting line when typing last char of sole "in", "out" and "body"
+  * tweaked smart indenting with respect to enumerators, arrays, labels and more
+  * paste a full line or more now causes automatic reindentation (global option to disable)
+  * fix: build phobos browse information broken in last version
+  * some internal errors are now reported to the output window (like failing to parse JSON file)
+  * fixed bad display when deleting characters from line with outlining
+  * automatic reindentation was not triggered when typing '{', '}', etc (win 7/8 only?)
+  * new option to show demangled symbols in the Error List (not the output window)
+
+2011-10-25 Version 0.3.28
+
+  * mago debugger: fixed crash when there is no sstStaticSym section in the debug info
+  * mago debugger: fixed local variables not shown in last function of an object file
+  * mago debugger: fixed display of TLS variables
+  * mago debugger: added workaround for bad line number debug info, causing mago to switch to assembly easily
+  * mago debugger: globals and statics can now be displayed without specifying complete scope
+  * cv2pdb: fixed patching of autoexp.dat when the install path contained spaces
+  * fix: the import path set in the global options never made it to the command line
+  * fixed parser to accept "class B() if(true) : A {}"
+  * fixed parser to support import as statement
+  * building druntime browse info now uses src folder (di files look ugly and do not compile)
+  * building browse info now writes to "Visual D" output pane
+  * F1 searches language and phobos documentation for help on identifier
+  * added highlighting of asm block, using new colors "Visual D Register/Mnemonic" and "Disabled/Token String" variants
+  * parsing and outlining now aborted when text changes, so editing is more responsive with large source files
+
+2011-12-03 Version 0.3.29
+
+  * highlighting: new colors for user defined list of types (defaults to basic types in object.d)
+  * disabled versions: fixed wrong highlighting when editing before conditional
+  * token replace dialog: fixed empty dialog when opening with default size
+  * fixed crash when building a project with a configuration that is not available in a dependent project
+  * fixed freeze in startup due to thread starting issues (probably only happened with more than 2 cores)
+  * added C++ to D conversion wizard
+  * added installation for Visual Studio 11
+  * tweaked dialogs to better integrate with VS
+
+2012-01-07 Version 0.3.30
+
+  * fixed utf8 to OLE string conversion, that could get in the way when using non ascii file names
+  * property pages now adjust their font and size to the IDE environment
+  * __ctfe is now highlighted as a keyword
+  * scope(identifier) with wrong identifier shown as a parse error
+  * completion automatically inserts now if there is only one candidate
+  * completion of import modules now restricted to files, not symbols
+  * colorizer now asks the parser whether "is" and "in" are used as operators
+  * debugger data tooltip now grabs ident1.ident2 expressions when hovering ident2
+  * added checkbox for options -gs and -property to project configuration
+  * added new color to highlight predefined versions
+  * creating new folder now initiates renaming it
+  * fixed error message capture for error list in case the message also contains "filename(lineno):"
+  * new options page "Tools->Options->Text Editor->D->Intellisense" to select sources of code completion
+  * experimental tooltips and code completion from semantic analysis of source code
+  * project configuration: new debugger option to redirect stdout to the debugger output window
+  * project configuration: new option to pause after running program without debugger
+  * added option to "Tools->Options->Projects and Solutions->Visual D Settings" to stop a solution build
+    if a project fails to build
+
+2012-03-14 Version 0.3.31
+
+  * added option to "Intellisense" page to configure trigger of code completion
+  * delay code definition window update until caret at the same position for a second to avoid pauses while
+    navigating through the source
+  * added support for building with GDC
+  * added platform support for "x64" (use with GDC only)
+  * includes new version 0.23 of cv2pdb that now also converts DWARF to pdb
+  * tweaked idl2d to convert files to build with dmd 2.058
+  * new version of mago: 
+    - fixed possible stall when starting debugging
+    - support for associative arrays in expressions
+    - fixed problem with loading debug info of large projects
+  * property: fixed editing multiple configurations at once
+  * added Compile command to syntax check the current source file
+  * parser now supports new delegate syntax (x) => x
+  * project config: shown command line now updated when pressing "Apply"
+  * fix resource include with spaces
+  * fix always rebuilding if a dependent library project target has spaces in the path name
+
+2012-05-01 Version 0.3.32
+
+  * new version of cv2pdb with better handling of unicode characters in path names and better
+    support for local variables in DWARF debug info
+  * new version of mago with string literal support for associative array keys and easier stepping into main
+  * some changes to reduce memory leaks due to false pointers
+  * fixed parser to disambiguate MixinStatement and MixinExpression
+  * added support for __vector(T) to parser
+  * goto definition: if executed on an import statement, now searching file through import paths
+  * fixed lexer to not treat !in_x as an operator followed by an identifier "_x"
+  * fixed regression: import expansions only listed folders, no modules
+  * fixed custom command: project would not restore if multiple commands are used
+  * project properties: added output type DLL for easier switching between DMD and GDC
+  * project properties: added subsystem option, use "not set" if you have to specify a specific windows version
+  * fixed underlining syntax errors shows only first error
+  * fixed option "Show expansions when" not saving state "writing an identifier"
+  * added icon for disabled project item (tool set to "None")
+  * version highlighting now supports versions DigitalMars/GNU and Win32/Win64
+  * fixed building static lib with GDC and a name in the library file name
+
+2012-06-19 Version 0.3.33
+
+  * debugger project settings now stored in solution options file, not in project file
+  * regression: clean project failed, now deletes files given by wildcard recursively
+  * token replace: fixed freeze when trying to replace no tokens
+  * cv2pdb: new version 0.25 that allows specifying a different pdb file being embedded 
+    into the binary and supports VS11
+  * cv2pdb: exposed command line options in the project options
+  * intellisense tool tip now shows enumerator value
+  * moved parser and semantic analysis into another process
+  * GDC: user specified libraries are now appended after the source files to the command 
+    line to avoid linker problems
+  * improved performance when indenting multiple lines of code
+  * remove project item: now asks whether file on disk should also be removed
+  * parser: added support for linkage specification inside alias
+  * version highlighting now supports the "version(V):" syntax
+  * tweaked vsi2d to also convert the Windows 8 SDK and VS2011 SDK
+  * added wizard to create packages from the new item dialog
+  * improved import statement detection for expansion and goto definition
+
+2012-10-12 Version 0.3.34
+
+  * fix exceptions in NDepend when opening context menu on D project
+  * delete file from project now uses VS environment dialog (avoiding dialog when moving project items)
+  * fixed "build phobos browse info" failing for dmd 2.059
+  * dependency on other projects: only output files with known file types are now passed to the dmd/gdc command line
+  * linker error messages can now be decompressed and demangled (thanks to Benjamin Thaut for providing the code)
+  * lexer now allows unicode characters from std.uni.isAlpha in identifiers
+  * fix: when building phobos browse info the implicitely added JSON path was not saved to options
+  * fix calling cv2pdb for D1
+  * goto definition: if ".." is used to reference the source file path, it could be opened twice in the editor
+  * new item: package and module name now filled with some guess
+  * optlink now called directly with file monitoring: this allows passing the library path directly (making the DMD_LIB 
+    patch in sc.ini redundant) and detecting library and source dependencies
+  * parser could not recover from error in module statement, also improved recovery from error in enum declaration
+  * parse errors in modules imported during semantic analysis could cause dramatic troubles
+  * fixed parsing problems with function literal attributes and enumerators
+  * outlining: adding lines before collapsed region could unfold the regions
+  * fix: underlined syntax error could lag behind by a keystroke
+  * tweak completion box:
+    - from browse info: template arguments and contraint stripped from symbol now
+    - avoid delayed opening of completion box when typing non-identifier characters
+    - completion box now closed for a lot of navigation and editing commands
+    - improved speed for large symbol lists
+  * status line now cleared after parsing of imports has finished
+  * fix installation for VS2012
+  * now runs on an almost precise garbage collector
+  * DLL project template now has a linker definition file
+
+2012-12-03 Version 0.3.35
+
+  * new linker option to disable using global and standard library search paths
+  * add preliminary support for upcoming dmd win64 compiler
+  * add '/' to '\' translation for macro replacements of $(OUTDIR) and $(INTDIR)
+  * fixed build variable $(VSINSTALLDIR) (pointed to parent directory of expected dir)
+  * added build project to translate sdk to D
+  * adjusted to changes to dependency file in dmd 2.061
+  * fixed Visual Studio sometimes renamed to VisualD in the window title
+  * fixed parser recovery with multiple syntax errors at module scope
+  * project options: added $(Configuration) to expand to the same as $(ConfigurationName) for compatibility with VC++ projects
+  * project config: controls now have style WS_TABSTOP to allow keyboard navigation
+  * goto definition now uses semantic analysis to find declaration
+  * semantic analysis now enabled by default (removed experimental status)
+  * semantics: add .ptr property to dynamic array
+  * now installed as an "extension" to VS 2010 and VS 2012
+  * fixed missing output files when a VC project has a project dependency on a D library project
+  * setting "Demangle names in link errors" never saved
+  * fixed macros not expanded in "other compiler" when figuring out what linker to be called directly
+  * now expanding response files in sc.ini or additional compiler options when looking for import or linker directives
+  * added D icon to vdserver.exe
+  * added console application project template with configurations for DMD and GDC for Win32 and x86
+  * fixed spurious crashes due to bug in precise garbage collection
+
+2013-05-10 Version 0.3.36
+
+  * added debug settings to new DMD/GDC project template 
+  * regressions caused by switching to installation as VS2010/VS2012 extension:
+    - executable path contained untranslated \n
+    - no Visual D colors added
+  * only force separate link if "Monitor OPTLINK dependencies" is enabled
+  * /SUBSYSTEM switches lost when building through optlink directly
+  * added project option "Use of Deprecated Features causes Error" that maps to -de
+  * tweaked parser to support new language features:
+    - version(assert)
+    - user defined attributes @identifier_opt(arguments) or @identifier
+    - alias id = type
+    - alias this = id
+    - deprecated("message")
+    - added keyword __parameters
+  * tweaked parser to support undocumented language features:
+    - ref anywhere in foreach type to support "foreach(const ref x; range)"
+    - prefix lambda with function/delegate
+    - added keyword __argTypes
+  * syntax highlighting and semantic now fully support version identifiers according 
+    to http://dlang.org/version.html
+  * improved parser/semantics: 
+    - fix "forgetting" type of function parameters after first evaluation
+    - fix a number of crashes during semantics
+    - improved parser recovery after too many closing braces
+  * when cloning a configuration in the configuation manager, debug info settings were lost
+  * compiling a single file now reports success
+  * avoid asking to save project file when closing VS and the project has already been saved
+  * fixed crashes due to bug in precise GC with arrays just below page size
+  * adjusted JSON interpretation for symbol lookup and parameter tooltips to new format in dmd 2.062
+  * some tweaks to C++ to D converter
+  * basic LDC support
+  * added new option pages for DMD/GDC/LDC directories
+  * linker messages from GDC can now be demangled aswell
+  * additional command line arguments now placed at the very end to avoid GDC linker troubles
+  * DParser by Alexander Bothe (https://github.com/aBothe/D_Parser) integrated as an alternative
+    semantic engine
+  * added command "Compile and Run" to execute current text buffer or selection via rdmd
+  * added command "Open Language Options" for easier access to the settings page
+  * added option "Colorize coverage from .LST file" to highlight lines from code coverage output
+
+2013-11-02 Version 0.3.37
+
+  * installer:
+    - fixed regression: VS 2010/2012 extension pkgdef files almost empty
+    - now has workaround for x64 debugger of Visual Studio 2012 Shell 
+    - installs cv2pdb 0.27 which fixes a crash when converting DWARF from GDC 4.8
+    - installs mago 0.8 with pdb and embedded breakpoints support 
+    - installer now picks up dmd2 folder from DMD installation
+    - added support for VS 2013 to installer, removed VS.NET 2003
+  * "Compile and Run":
+    - no longer adds "--main" automatically
+    - removed some other implicite command line options that confused rdmd
+    - fixed quotes in --eval arguments
+    - didn't save file if it is not part of a project in the solution
+  * syntax/coverage highlighiting
+    - editor always started with coverage highlighting enabled
+    - Colorize coverage: 
+      * disabled if lst file older than source file or deleted
+      * tweaked line number translation
+      * now searches for coverage generated files in last execution folders
+      * added new command "Delete Coverage Files"
+    - after changing the "Colored types" the current editor did not update immediately
+    - user type colorizer settings were forgotten after editing options
+    - keywords can now also be colored by adding them to the "Colored types"
+  * DParser
+    - updated to recent version (https://github.com/aBothe/D_Parser/commit/72f1bc54f2426954f463f03b215e044174fc1468)
+    - enabled mixin analysis
+    - pass deprecation flag to engine
+    - DParser engine now used by default if installed
+  * vdserver
+    - add __FUNCTION__, __PRETTY_FUNCTION__ and __MODULE__ as keywords and primary expression
+    - add __parameters as specification in is-expression
+  * build system
+    - fixed building with -op and source files on different drive than project
+    - added file options per configuration
+    - fixed invoking bad command when no files to compile, but additional arguments set
+    - added global option to display the reason for building a target
+    - fixed custom build rules executed twice sometimes
+    - fixed sc.ini evaluation, added support for sections [Environment32] and [Environment64] 
+    - link dependencies can now also be monitored for the 32-bit MS linker
+    - added VCINSTALLDIR to the list of available macros
+    - added different options for executable and librarie search paths to be used for Win32/x64
+    - x64: linker settings from sc.ini can be overwritten 
+    - x64: linker no longer invoked through dmd
+  * miscellaneous
+    - added command "Open Folder in Windows Explorer" to project and folder context menu
+    - goto definition now falls back to JSON information if semantic analysis yields no result
+    - improved indentation after opening parenthesis to follow next token
+    - added commands "Collapse unittests" and "Collapse disabled" to the outlining menu
+    - dviewhelper.dll from cv2pdb now avoids being unloaded after debugger expression evaluation using visualizers
+  * changed license to Boost
+
+2014-04-12 Version 0.3.38
+
+  * updated to cv2pdb 0.31
+    - support mspdb120.dll from VS 2013
+    - bugzilla 11537: improved search for appropriate mspdb*.dll if multiple version of VS installed
+	- fix support for DWARF conversion for gcc 4.8
+    - bugzilla 11898: cv2pdb: modified visualizer for void[] to also show bytes
+
+  * updated to mago 0.9
+    - bugzilla 11547: remove error message when stopping debugging
+    - bugzilla 11437: debug info rejected if records don't have "recommended" order
+    - bugzilla 11030: set breakpoint in all template instances
+
+  * build system
+    - added support for string import dependencies (needs dmd 2.065)
+    - Windows SDK 8.0/8.1 detection
+    - fix bad "\n" in default x64 library search path
+    - fixed default library path for x64 (contained spaces, but were not quoted, added default for 8.1 SDK)
+    - fixed passing quoted library paths to linker
+    - x64 executable and library search path not correctly saved for next VS start
+    - bugzilla 11962: added option to select the C runtime library when compiling for x64
+
+  * project management
+    - fixed project and completion icons being converted to 16 color bitmaps
+    - add source control support for git in VS2013 (and maybe others)
+    - bugzilla 12052: improve project automation to mute NuGet (still empty project pretended)
+    - fix DnD of project items in VS2013
+
+  * language service
+    - completion box now displays appropriate icons and tooltip with dparser
+    - tool tips now expand some Ddoc macros for better readability
+    - bugzilla 11940: completion on import statements no longer showed folder icons
+    - bugzilla 11649: completion on selective import now lists identifiers from imported module
+    - improved integration of Alex Bothe's dparser
+      - updated dparser to 1bb6dc6e0a3069a07d8e7f15070161b717bd94c4
+	  - fixed completion for symbols without description
+      - added options to enable/disable mixin analysis and UFCS expansions
+      - added support for multi line completions (including override completion)
+      - parameter tool tips now use prototype from dparser and shows documentation
+    - bugzilla 12353: option "Show Type In Tooltip" not saved and restored across restart
+
+  * miscellanea
+    - update SDK conversion for VS2013 and Windows SDK 8.1
+    - bugzilla 11786: change some default colors when using dark theme in VS 2012+ (restart required)
+    - bugzilla 12187: disguise functionality of pipedmd.exe and filemonitor.dll to let it pass 
+      most anti-virus checks
+
+2014-04-15 Version 0.3.38-1
+
+  * build mago with static C runtime to avoid dependencies on msvcrt120.dll
+
+2014-10-10 Version 0.3.39
+
+  * added editor margin to display coverage counters and percentage
+  * support tab/indentation settings set by .editorconfig plugin
+  * optlink now always called with /DELEXE to avoid keeping broken binary
+  * bugzilla 11035: added workaround for bad import library being passed by C/C++ projects
+  * tweaked "Compile & Run" to distinguish between compile and execution errors
+  * added "Compile & Debug" command
+  * new mago version 1.0
+    - now supports debugging x64 executables
+    - displays static members of classes and structs
+    - fixed not closing executable file causing linker to fail when rebuilding
+    - fixed breakpoints not set in all instances of a template
+    - breakpoints no longer span multiple lines
+    - disassembly now shows a maximum of 8 lines of source code before instruction
+  * new dparser version: a28aaf67777733b2b70d56fc8cab8b5f296b9745
+  * add option "up to date with same time" to custom build
+  * target no longer rebuilt if only custom builds necessary
+  * add options for -vgc, -gx and -allinst
+  * removed checkbox for dmd option -quiet
+  * slightly improved configuration pages by grouping related options
+  * bugzilla 12584: fixed global options disappearing when resizing window
+  * bugzilla 13360: implemented automation object methods "DTE" and "Collection"
+  * syntax highlighting: @nogc added as a keyword
+
+2015-01-01 Version 0.3.40
+
+  * cv2pdb: did not run on XP anymore due to bad OS version requirements
+  * add installation for VS2014
+  * bugzilla 13452: fix file monitoring
+  * bugzilla 13616: fix freeze when starting completion at the very first line and column of source
+  * custom file properties: edit, change selection and apply could change new selected file
+  * moved "Other Compiler" option from main project page to compiler page
+  * added additional options to the resource compiler tool
+  * added basic support to compile C/C++ files:
+    * new tool "C/C++" that is also auto-detected for usual file extensions
+    * common command line options can be specified on the compiler page of the project 
+    * special command line options can be added per file
+    * $(CC) expands to the compiler executable of the current D compiler: dmc, cl, gcc or clang
+    * if "Translate D options" is checked, dmd options for -g, -release, -O are translated to 
+      the respective C/C++ compiler option
+  * updated version identifiers according to http://dlang.org/version.html
+  * separate link could fail if configuration name contains spaces
+  * really updated dparser to a6207d6db5e54c68aa4b9db53b702681242d81d5
+  * goto definition on import now supports package.d
+  * bugzilla 13759: $(VSINSTALLDIR)\Common7\IDE now added to the default executable paths
+  * build phobos browse info: operated on outdated folder structure of phobos/druntime
+  * DMD/x64 linker override settings not saved
+  * revamped pipedmd: now uses tracker.exe from MSBuild or WinSDK to monitor dependencies
+  * Win32/COFF support: check box on Compiler->Output page, new tab in global options
+  * bugzilla 13817: VisualD cannot list members with utf-8 wide characters
+  * bugzilla 13342: mixin error message now interpreted
+  * when running/unittesting from within visuald, exception/callstack locations can be jumped to
+  * bugzilla 13213: there are now both "goto definition" and "goto declaration", where the former
+    will try to find the forward declared symbols through the object browser (including C/C++)
+  * object browser/symbol search: now filters out __unittest and __invariant symbols
+  * cv2pdb: updated to 0.33 with better DWARF location support
+
+2015-05-16 Version 0.3.41
+
+  * mago:
+    - module list now shows x64 addresses correctly
+    - verboser output for DLL load/unload
+    - implement "set next statement"
+    - callstack: parameter list also showed locals
+    - disassembly: show symbols, address labels
+    - fix dstring display
+    - can list associative array members (needs 
+      https://github.com/D-Programming-Language/dmd/pull/4473 for Win64)
+    - show exception number for Win32 exceptions
+    - can now load PDB symbols from Microsoft Symbol Server or local 
+      cache folders
+    - now support lexical scope blocks (helps C++ and D with
+      https://github.com/D-Programming-Language/dmd/pull/2867)
+  * cv2pdb:
+    - improvements for DWARF conversion
+  * dparser updated to cf26dbe426b10957f6364313cc7121e41083bebe with support for new 
+    language features in dmd 2.067 and fixing a number of exceptions
+  * some initial support for finding symbol references
+  * new linker option "build and use local phobos library" to get a COFF32 version (dmd 2.067+)
+    or add missing debug info (dmd 2.065+)
+  * renaming project configuration did not change respective config on all platforms 
+  * workaround for link response file with spaces, but disabled short names on NTFS volume
+  * profiler window: non-D symbols (e.g. C++ mangled functions) are no longer displayed empty
+  * new command "Compile and Disassemble" to show the disassembly of the current file in
+    the code context window that is automatically synchronized with editor movements
+
+2015-08-05 Version 0.3.42
+
+  * added new command "DustMite Build Failure" to reduce source of startup project
+    for build error with DustMite
+  * update "Build Phobos Browse Info" and "Build local version of phobos" for dmd 2.067+
+  * cv2pdb: 
+    - improved DWARF support:
+      - last version introduced crashes with DWARF conversions
+	  - now supports info in sections .debug_frame and .debug_loc for better display of locals
+      - DWARF debug info now stripped from executable
+    - support for mspdb140.dll from VS2015
+	- now writes correct machine type to PDB for x64
+  * add integration into the Visual Studio Performance Wizard
+  * added project template for console application built with DMD/LDC and x86/x64
+  * bugzilla 14706: release configurations now enable optimizations and inlining by default
+  * mago is now the default debug engine for new projects
+  * demangle D/C++ symbols in disassembly with new tool dcxxfilt that supports both gcc
+    and MS C++ mangling.
+  * search file: the same file is no longer listed multiple times if it is in several projects
+  * search file: '.', '/' and '\' are considered the same in case insensitive non-regex searches
+    to simplify finding a module in a package
+  * search file: case sensitivity button was restored inverted
+  * installer now shows the version of Visual D about to be installed
+  * mago: added support for new AA implementation
+  * mago: preview for structs now shows first members
+
+unreleased Version 0.3.43
+
+  * dustmite: pattern passed to "find" must always use quotes
+  * VS2015: new install adds $(VCInstallDir)\bin to exectuable paths to allow cv2pdb to create PDB files
+  * VS2015: added detection for Universal CRT in Win10 SDK, new macro replacements $(UCRTSdkDir) and 
+    $(UCRTVersion) allow adding library search path to find libucrt.lib
+  * New item: the module name no longer has a preceding '.' when guessing a package name
+  * when renaming a module in the project, the editor is reopened at the previous caret position if it was
+    opened before
+  * replaced ancient pkgcmd.ctc with pkgcmd.vsct that's buildable with newer VS SDKs
+  * added icons to some commands
+  * renamed command "Add Folder" in project folder context menu to "Add Filter"
+  * added command "Add Folder" to project folder context menu that actually creates the folder on disk
+  * renaming a module in the project tree now reopens it at the previous caret location
+  * renaming a package in the project tree also renames the folder on disk if it is still empty
+  * debug info: added option "suitable for selected debug engine"
+  * the original semantic analysis engine is no longer installed, always using dparser now
+  * LDC: recent versions build object files into intermediate folder, wrong names passed to linker
+    with "separate compile and link"
+  * moved defaults for resource includes and dmd executable paths from installation to extension init
+  * fixed spurious "not implemented" error in error list of VS 2015
+  * fix dark theme detection in VS 2015
+  * better semantic/colorizer support for versions LDC,CRuntime_Microsoft,CRuntime_DigitalMars and MinGW
+  * tweaked default path and library settings for DMD and LDC
+  * configuration dialogs:
+    - fixed small fonts in VS2015
+    - better work with resizeable windows
+    - scale some controls vertically if there is space
+    - added browse buttons to path settings
+  * search pane did not save its last state, only when switching between file and symbol search
+  * fixed calling linker to build with VC runtime of VS2015: legacy_stdio_definitions.lib missing
+  * bugzilla 12021: C++ projects (and others probably, too) might not load correctly in a solution
+    that also contains a Visual D project
+  * VS2015 linker updates logs and telemetry data files, confusing tracked linker dependencies. 
+    Now ignoring files that are both read and written.
+  * debug option: allow none of -debug and -release to be specified (and fix LDC never to receive 
+    the -d-debug option)
+  * some improvements to the C++ to D conversion wizard:
+    - don't stop conversion after an unmatched } (this also caused other messages to not be displayed)
+    - added support for sizeof without parenthesis
+    - allow namespace scope in type names
+    - allow virtual destructors
+    - skip throw function specification
+    - fix order of identifiers if "#define A B" is converted to an alias
+  * additional options: now replacing newline with space when adding to the command line
+  * compiling file for syntax check with LDC passed wrong command line option

@@ -1,0 +1,666 @@
+<DProject>
+ <ProjectGuid>{7610F45A-69D9-4B68-BE63-0E055B51D447}</ProjectGuid>
+ <Config name="Debug" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>2</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <mscoff>0</mscoff>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <vgc>0</vgc>
+  <symdebug>1</symdebug>
+  <optimize>0</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <errDeprecated>0</errDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>0</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>0</useInline>
+  <release>0</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>1</infowarnings>
+  <checkProperty>0</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>0</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <allinst>0</allinst>
+  <stackStomp>0</stackStomp>
+  <compiler>0</compiler>
+  <otherDMD>0</otherDMD>
+  <cccmd>$(CC) -c</cccmd>
+  <ccTransOpt>1</ccTransOpt>
+  <program>m:\s\d\rainers\windows\bin\dmd_msc.exe</program>
+  <imppath>..</imppath>
+  <fileImppath>..;resources</fileImppath>
+  <outdir>..\bin\$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)\obj</objdir>
+  <objname />
+  <libname />
+  <doDocComments>1</doDocComments>
+  <docdir>$(IntDir)\doc</docdir>
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(ProjectName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids />
+  <dump_source>0</dump_source>
+  <mapverbosity>3</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>1</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)\cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles>uuid.lib advapi32.lib comdlg32.lib ole32.lib ..\sdk\lib\oleaut32.lib ..\sdk\lib\comctl32.lib shell32.lib gdi32.lib winmm.lib</libfiles>
+  <libpaths />
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\$(ProjectName).dll</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <cRuntime>1</cRuntime>
+  <privatePhobos>0</privatePhobos>
+  <additionalOptions />
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj</filesToClean>
+ </Config>
+ <Config name="Release" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>0</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <mscoff>0</mscoff>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <vgc>0</vgc>
+  <symdebug>2</symdebug>
+  <optimize>1</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <errDeprecated>0</errDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>0</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>1</useInline>
+  <release>1</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>0</infowarnings>
+  <checkProperty>0</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>0</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <allinst>0</allinst>
+  <stackStomp>0</stackStomp>
+  <compiler>0</compiler>
+  <otherDMD>0</otherDMD>
+  <cccmd>$(CC) -c</cccmd>
+  <ccTransOpt>1</ccTransOpt>
+  <program>m:\s\d\rainers\windows\bin\dmd.exe</program>
+  <imppath>..</imppath>
+  <fileImppath>..;resources</fileImppath>
+  <outdir>..\bin\$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)</objdir>
+  <objname />
+  <libname />
+  <doDocComments>0</doDocComments>
+  <docdir />
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(ProjectName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids />
+  <dump_source>0</dump_source>
+  <mapverbosity>1</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>1</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)\cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles>uuid.lib advapi32.lib comdlg32.lib ole32.lib ..\sdk\lib\oleaut32.lib ..\sdk\lib\comctl32.lib shell32.lib gdi32.lib winmm.lib</libfiles>
+  <libpaths />
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\$(ProjectName).dll</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <cRuntime>1</cRuntime>
+  <privatePhobos>0</privatePhobos>
+  <additionalOptions />
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj</filesToClean>
+ </Config>
+ <Config name="TestDebug" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>0</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <mscoff>0</mscoff>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <vgc>0</vgc>
+  <symdebug>0</symdebug>
+  <optimize>1</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <errDeprecated>0</errDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>1</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>1</useInline>
+  <release>1</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>1</infowarnings>
+  <checkProperty>0</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>0</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <allinst>0</allinst>
+  <stackStomp>0</stackStomp>
+  <compiler>0</compiler>
+  <otherDMD>0</otherDMD>
+  <cccmd>$(CC) -c</cccmd>
+  <ccTransOpt>1</ccTransOpt>
+  <program>m:\s\d\rainers\windows\bin\dmd_msc.exe</program>
+  <imppath>..;m:\s\d\rainers\druntime\src</imppath>
+  <fileImppath>..;resources</fileImppath>
+  <outdir>..\bin\$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)\obj</objdir>
+  <objname />
+  <libname />
+  <doDocComments>1</doDocComments>
+  <docdir>$(IntDir)\doc</docdir>
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(ProjectName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids>TESTMAIN$(TEST_OPTIONS)</versionids>
+  <dump_source>0</dump_source>
+  <mapverbosity>3</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>0</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)\cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles>user32.lib kernel32.lib uuid.lib advapi32.lib comdlg32.lib ole32.lib oleaut32.lib comctl32.lib shell32.lib gdi32.lib winmm.lib</libfiles>
+  <libpaths>..\sdk\lib</libpaths>
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <cRuntime>1</cRuntime>
+  <privatePhobos>0</privatePhobos>
+  <additionalOptions>-gx</additionalOptions>
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj</filesToClean>
+ </Config>
+ <Config name="Debug LDC" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>0</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <mscoff>0</mscoff>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <vgc>0</vgc>
+  <symdebug>1</symdebug>
+  <optimize>0</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <errDeprecated>0</errDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>0</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>0</useInline>
+  <release>0</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>1</infowarnings>
+  <checkProperty>1</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>1</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <allinst>0</allinst>
+  <stackStomp>0</stackStomp>
+  <compiler>2</compiler>
+  <otherDMD>0</otherDMD>
+  <cccmd>$(CC) -c</cccmd>
+  <ccTransOpt>1</ccTransOpt>
+  <program>m:\s\d\rainers\windows\bin\dmd_msc.exe</program>
+  <imppath>..</imppath>
+  <fileImppath>..;resources</fileImppath>
+  <outdir>..\bin\$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)\obj</objdir>
+  <objname />
+  <libname />
+  <doDocComments>1</doDocComments>
+  <docdir>$(IntDir)\doc</docdir>
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(ProjectName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids />
+  <dump_source>0</dump_source>
+  <mapverbosity>3</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>1</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)\cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles>uuid.lib advapi32.lib comdlg32.lib ole32.lib ..\sdk\lib\oleaut32.lib ..\sdk\lib\comctl32.lib shell32.lib gdi32.lib winmm.lib</libfiles>
+  <libpaths />
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\$(ProjectName).dll</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <cRuntime>1</cRuntime>
+  <privatePhobos>0</privatePhobos>
+  <additionalOptions>-debuglib=phobos,druntime</additionalOptions>
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj</filesToClean>
+ </Config>
+ <Config name="Debug COFF32" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>0</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <mscoff>0</mscoff>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <vgc>0</vgc>
+  <symdebug>1</symdebug>
+  <optimize>0</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <errDeprecated>0</errDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>0</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>0</useInline>
+  <release>0</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>1</infowarnings>
+  <checkProperty>0</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>0</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <allinst>0</allinst>
+  <stackStomp>0</stackStomp>
+  <compiler>0</compiler>
+  <otherDMD>0</otherDMD>
+  <cccmd>$(CC) -c</cccmd>
+  <ccTransOpt>1</ccTransOpt>
+  <program>m:\s\d\rainers\windows\bin\dmd_msc.exe</program>
+  <imppath>..</imppath>
+  <fileImppath>..;resources</fileImppath>
+  <outdir>..\bin\$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)\obj</objdir>
+  <objname />
+  <libname />
+  <doDocComments>1</doDocComments>
+  <docdir>$(IntDir)\doc</docdir>
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(ProjectName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids />
+  <dump_source>0</dump_source>
+  <mapverbosity>3</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>0</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)\cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles>uuid.lib advapi32.lib comdlg32.lib ole32.lib oleaut32.lib comctl32.lib shell32.lib gdi32.lib winmm.lib</libfiles>
+  <libpaths>..\sdk\lib</libpaths>
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\..\Debug\$(ProjectName).dll</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <cRuntime>1</cRuntime>
+  <privatePhobos>0</privatePhobos>
+  <additionalOptions>-debuglib=phobos_d,druntime_d -m32ms -L/DLL -L/FORCE:UNRESOLVED</additionalOptions>
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj</filesToClean>
+ </Config>
+ <Folder name="VisualD">
+  <Folder name="a_workaround">
+   <File path="workaround.d" />
+  </Folder>
+  <Folder name="gc">
+   <File tool="None" path="..\..\..\rainers\druntime\src\gc\gcdump.d" />
+   <File tool="None" path="..\..\..\rainers\druntime\src\gc\gcx.d" />
+   <File tool="None" path="..\..\..\rainers\druntime\src\rt\lifetime.d" />
+   <File tool="None" path="..\..\..\rainers\druntime\src\rt\sections_win32.d" />
+   <File tool="None" path="..\vdc\semantic.d" />
+  </Folder>
+  <Folder name="language">
+   <File path="colorizer.d" />
+   <File path="completion.d" />
+   <File path="cppwizard.d" />
+   <File path="dlangsvc.d" />
+   <File path="expansionprovider.d" />
+   <File path="simpleparser.d" />
+   <File path="vdextensions.d" />
+   <File path="vdserverclient.d" />
+   <File path="viewfilter.d" />
+  </Folder>
+  <Folder name="project">
+   <File path="automation.d" />
+   <File path="build.d" />
+   <File path="chiercontainer.d" />
+   <File path="chiernode.d" />
+   <File path="config.d" />
+   <File path="dproject.d" />
+   <File path="hierarchy.d" />
+  </Folder>
+  <Folder name="Resources">
+   <File path="Resources\AlternateRowColor.ico" />
+   <File path="Resources\ascend.ico" />
+   <File path="Resources\CaseSensitive.ico" />
+   <File path="Resources\completionset.bmp" />
+   <File path="Resources\DAboutBox.ico" />
+   <File path="Resources\descend.ico" />
+   <File path="Resources\DImageList.bmp" />
+   <File path="Resources\DSplashScreenIcon.bmp" />
+   <File path="Resources\faninout.ico" />
+   <File path="Resources\GroupByType.ico" />
+   <File tool="Custom" path="Resources\pkgcmd.vsct" customcmd="set VSSDKInstall=%VSSDK140Install%
+if &quot;%VSSDKInstall%&quot; == &quot;&quot; set VSSDKInstall=%VSSDK120Install%
+if &quot;%VSSDKInstall%&quot; == &quot;&quot; set VSSDKInstall=%VSSDK110Install%
+if &quot;%VSSDKInstall%&quot; == &quot;&quot; set VSSDKInstall=%VSSDK100Install%
+if &quot;%VSSDKInstall%&quot; == &quot;&quot; set VSSDKInstall=%VSSDK90Install%
+if &quot;%VSSDKInstall%&quot; == &quot;&quot; set VSSDKInstall=c:\l\vs12SDK
+set VSCT=%VSSDKInstall%\VisualStudioIntegration\Tools\Bin\VSCT.exe
+if not exist &quot;%VSCT%&quot; goto no_VSCT
+&quot;%VSCT%&quot; $(InputPath) $(InputDir)\$(InputName).cto -I%VSSDKInstall%\VisualStudioIntegration\Common\Inc
+goto reportError
+
+:no_VSCT
+echo Warning: VSCT.exe not found as %VSCT%
+echo It is part of the VS2010-VS2013 SDK and is needed to compile $(InputPath)
+:reportError" outfile="$(InputDir)\$(InputName).cto" />
+   <File path="Resources\refresh.ico" />
+   <File path="Resources\RegExp.ico" />
+   <File path="Resources\removetrace.ico" />
+   <File path="Resources\resources.h" />
+   <File path="Resources\SearchFile.ico" />
+   <File path="Resources\SearchSymbol.ico" />
+   <File path="Resources\settrace.ico" />
+   <File tool="Custom" path="visuald.rc" dependencies="resources\pkgcmd.cto;resources\daboutlogo.ico;..\version;resources\dimagelist.bmp" customcmd="call &quot;$(VSINSTALLDIR)\Common7\Tools\vsvars32.bat&quot;
+rem if errorlevel 1 goto reportError
+rc /fo&quot;$(OutDir)\visuald.res&quot; $(InputPath)" outfile="$(OutDir)\visuald.res" linkoutput="true" />
+   <File path="Resources\WholeWord.ico" />
+  </Folder>
+  <Folder name="Templates">
+   <Folder name="CodeSnippets">
+    <Folder name="Snippets">
+     <File path="Templates\CodeSnippets\Snippets\blockcomment.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\class.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\ctor.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\else.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\for.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\if.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\version.snippet" />
+     <File path="Templates\CodeSnippets\Snippets\while.snippet" />
+    </Folder>
+    <File path="Templates\CodeSnippets\SnippetsIndex.xml" />
+   </Folder>
+   <Folder name="Items">
+    <File tool="None" path="Templates\Items\empty.d" />
+    <File tool="None" path="Templates\Items\hello.d" />
+    <File path="Templates\Items\items.vsdir" />
+   </Folder>
+   <Folder name="ProjectItems">
+    <Folder name="ConsoleApp">
+     <File path="Templates\ProjectItems\ConsoleApp\ConsoleApp.visualdproj" />
+     <File path="Templates\ProjectItems\ConsoleApp\ConsoleApp.vstemplate" />
+     <File tool="None" path="Templates\ProjectItems\ConsoleApp\main.d" />
+    </Folder>
+    <Folder name="ConsoleDMDGDC">
+     <File path="Templates\ProjectItems\ConsoleDMDGDC\ConsoleApp.visualdproj" />
+     <File path="Templates\ProjectItems\ConsoleDMDGDC\ConsoleApp.vstemplate" />
+     <File tool="None" path="Templates\ProjectItems\ConsoleDMDGDC\main.d" />
+    </Folder>
+    <Folder name="DynamicLib">
+     <File tool="None" path="Templates\ProjectItems\DynamicLib\dll.def" />
+     <File tool="None" path="Templates\ProjectItems\DynamicLib\dllmain.d" />
+     <File path="Templates\ProjectItems\DynamicLib\DynamicLib.visualdproj" />
+     <File path="Templates\ProjectItems\DynamicLib\DynamicLib.vstemplate" />
+    </Folder>
+    <Folder name="StaticLib">
+     <File tool="None" path="Templates\ProjectItems\StaticLib\lib.d" />
+     <File path="Templates\ProjectItems\StaticLib\StaticLib.visualdproj" />
+     <File path="Templates\ProjectItems\StaticLib\StaticLib.vstemplate" />
+    </Folder>
+    <Folder name="WindowsApp">
+     <File path="Templates\ProjectItems\WindowsApp\WindowsApp.visualdproj" />
+     <File path="Templates\ProjectItems\WindowsApp\WindowsApp.vstemplate" />
+     <File tool="None" path="Templates\ProjectItems\WindowsApp\winmain.d" />
+    </Folder>
+   </Folder>
+   <Folder name="Projects">
+    <File path="Templates\Projects\DTemplates.vsdir" />
+   </Folder>
+   <Folder name="Wizards">
+    <File path="Templates\Wizards\package.vsz" />
+   </Folder>
+  </Folder>
+  <File path="comutil.d" />
+  <File path="dimagelist.d" />
+  <File path="dllmain.d" />
+  <File path="dpackage.d" />
+  <File path="fileutil.d" />
+  <File path="getmsobj.d" />
+  <File path="help.d" />
+  <File path="hierutil.d" />
+  <File path="intellisense.d" />
+  <File path="lexutil.d" />
+  <File path="library.d" />
+  <File path="logutil.d" />
+  <File path="..\tools\nostacktrace.d" />
+  <File path="oledatasource.d" />
+  <File path="pkgutil.d" />
+  <File path="profiler.d" />
+  <File path="propertypage.d" />
+  <File path="register.d" />
+  <File path="searchsymbol.d" />
+  <File path="stringutil.d" />
+  <File path="tokenreplace.d" />
+  <File path="tokenreplacedialog.d" />
+  <File path="trackprojectdocument.d" />
+  <File path="visuald.def" />
+  <File path="vscommands.d" />
+  <File path="winctrl.d" />
+  <File path="windows.d" />
+  <File path="wmmsg.d" />
+  <File path="xmlwrap.d" />
+ </Folder>
+</DProject>
